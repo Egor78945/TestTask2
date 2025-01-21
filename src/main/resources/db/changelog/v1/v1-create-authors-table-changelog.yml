@@ -1,0 +1,82 @@
+databaseChangeLog:
+  - changeSet:
+      id: v1-1
+      author: test
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            tableExists:
+              tableName: authors
+      changes:
+        - createTable:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+                  autoIncrement: true
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birthday
+                  type: date
+                  constraints:
+                    nullable: false
+        - insert:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: Fedor
+              - column:
+                  name: surname
+                  value: Dostoevsky
+              - column:
+                  name: birthday
+                  value: '1821-11-11'
+        - insert:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: Alexander
+              - column:
+                  name: surname
+                  value: Pushkin
+              - column:
+                  name: birthday
+                  value: '1799-06-06'
+        - insert:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: Mikhail
+              - column:
+                  name: surname
+                  value: Lermontov
+              - column:
+                  name: birthday
+                  value: '184-10-15'
+

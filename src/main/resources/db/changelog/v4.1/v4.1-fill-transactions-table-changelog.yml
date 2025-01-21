@@ -1,0 +1,99 @@
+databaseChangeLog:
+  - changeSet:
+      id: v4-1
+      author: test
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: transactions
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: type
+                  value: 'take'
+              - column:
+                  name: operation_time
+                  value: '2024-06-27 09:32:15'
+              - column:
+                  name: reader_id
+                  value: 1
+              - column:
+                  name: book_id
+                  value: 1
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: type
+                  value: 'return'
+              - column:
+                  name: operation_time
+                  value: '2024-07-17 14:05:45'
+              - column:
+                  name: reader_id
+                  value: 1
+              - column:
+                  name: book_id
+                  value: 1
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: type
+                  value: 'take'
+              - column:
+                  name: operation_time
+                  value: '2024-02-15 12:01:55'
+              - column:
+                  name: reader_id
+                  value: 2
+              - column:
+                  name: book_id
+                  value: 2
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: type
+                  value: 'return'
+              - column:
+                  name: operation_time
+                  value: '2024-02-27 09:45:17'
+              - column:
+                  name: reader_id
+                  value: 2
+              - column:
+                  name: book_id
+                  value: 2
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: type
+                  value: 'take'
+              - column:
+                  name: operation_time
+                  value: '2020-10-18 10:35:12'
+              - column:
+                  name: reader_id
+                  value: 3
+              - column:
+                  name: book_id
+                  value: 3

@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: v2.1-1
+      author: test
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: books
+      changes:
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: 'crime_and_punishment'
+              - column:
+                  name: publish_date
+                  value: 1866
+              - column:
+                  name: author_id
+                  value: 1
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: 'evgeny_onegin'
+              - column:
+                  name: publish_date
+                  value: 1833
+              - column:
+                  name: author_id
+                  value: 2
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: 'hero_of_our_time'
+              - column:
+                  name: publish_date
+                  value: 1839
+              - column:
+                  name: author_id
+                  value: 3

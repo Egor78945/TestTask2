@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: ./v4.1-fill-transactions-table-changelog.yml

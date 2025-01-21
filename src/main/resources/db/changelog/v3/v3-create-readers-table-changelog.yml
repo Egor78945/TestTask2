@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: v3-1
+      author: test
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            tableExists:
+              tableName: readers
+      changes:
+        - createTable:
+            tableName: readers
+            columns:
+              - column:
+                  name: phone_number
+                  type: varchar(12)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sex
+                  type: varchar(6)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birthday
+                  type: date
+                  constraints:
+                    nullable: false

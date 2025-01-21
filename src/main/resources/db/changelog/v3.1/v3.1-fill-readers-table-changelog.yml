@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: v3.1-1
+      author: test
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: readers
+      changes:
+        - insert:
+            tableName: readers
+            columns:
+              - column:
+                  name: phone_number
+                  value: '+79873452345'
+              - column:
+                  name: name
+                  value: 'Anton'
+              - column:
+                  name: surname
+                  value: 'Ivanov'
+              - column:
+                  name: sex
+                  value: 'male'
+              - column:
+                  name: birthday
+                  value: '2000-05-15'
+        - insert:
+            tableName: readers
+            columns:
+              - column:
+                  name: phone_number
+                  value: '+79035674321'
+              - column:
+                  name: name
+                  value: 'Roman'
+              - column:
+                  name: surname
+                  value: 'Kuznecov'
+              - column:
+                  name: sex
+                  value: 'male'
+              - column:
+                  name: birthday
+                  value: '2004-01-01'
+        - insert:
+            tableName: readers
+            columns:
+              - column:
+                  name: phone_number
+                  value: '+79452390567'
+              - column:
+                  name: name
+                  value: 'Viktorya'
+              - column:
+                  name: surname
+                  value: 'Vasilyeva'
+              - column:
+                  name: sex
+                  value: 'female'
+              - column:
+                  name: birthday
+                  value: '2007-12-01'
