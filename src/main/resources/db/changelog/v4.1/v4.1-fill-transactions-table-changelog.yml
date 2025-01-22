@@ -11,9 +11,6 @@ databaseChangeLog:
             tableName: transactions
             columns:
               - column:
-                  name: id
-                  value: 1
-              - column:
                   name: type
                   value: 'TAKE'
               - column:
@@ -28,9 +25,6 @@ databaseChangeLog:
         - insert:
             tableName: transactions
             columns:
-              - column:
-                  name: id
-                  value: 2
               - column:
                   name: type
                   value: 'RETURN'
@@ -47,9 +41,6 @@ databaseChangeLog:
             tableName: transactions
             columns:
               - column:
-                  name: id
-                  value: 3
-              - column:
                   name: type
                   value: 'TAKE'
               - column:
@@ -64,9 +55,6 @@ databaseChangeLog:
         - insert:
             tableName: transactions
             columns:
-              - column:
-                  name: id
-                  value: 4
               - column:
                   name: type
                   value: 'RETURN'
@@ -83,9 +71,6 @@ databaseChangeLog:
             tableName: transactions
             columns:
               - column:
-                  name: id
-                  value: 5
-              - column:
                   name: type
                   value: 'TAKE'
               - column:
@@ -100,9 +85,6 @@ databaseChangeLog:
         - insert:
             tableName: transactions
             columns:
-              - column:
-                  name: id
-                  value: 6
               - column:
                   name: type
                   value: 'TAKE'

@@ -10,7 +10,6 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "transactions")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class Transaction {
     @Id
@@ -25,4 +24,11 @@ public class Transaction {
     private String readerPhoneNumber;
     @Column(name = "book_id")
     private Long bookId;
+
+    public Transaction(String type, Timestamp operationTime, String readerPhoneNumber, Long bookId) {
+        this.type = type;
+        this.operationTime = operationTime;
+        this.readerPhoneNumber = readerPhoneNumber;
+        this.bookId = bookId;
+    }
 }
