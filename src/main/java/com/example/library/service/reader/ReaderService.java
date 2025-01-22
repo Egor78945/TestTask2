@@ -1,6 +1,7 @@
 package com.example.library.service.reader;
 
 import com.example.library.model.dto.ReaderDTO;
+import com.example.library.model.dto.ReaderDeptDTO;
 import com.example.library.model.entity.Reader;
 import com.example.library.repository.ReaderRepository;
 import com.example.library.service.reader.mapper.ReaderMapper;
@@ -36,5 +37,9 @@ public class ReaderService {
 
     public List<Reader> getMostReadingReaders() {
         return readerRepository.findMostReadingReaders().stream().map(arr -> new Reader((String) arr[0], (String) arr[1], (String) arr[2], (String) arr[3], (Date) arr[4])).collect(Collectors.toList());
+    }
+
+    public List<ReaderDeptDTO> getReadersDept(){
+        return readerRepository.findReadersDept().stream().filter(arr -> (Long)arr[1] > 0).map(arr -> new ReaderDeptDTO((String) arr[0], (Long) arr[1])).collect(Collectors.toList());
     }
 }

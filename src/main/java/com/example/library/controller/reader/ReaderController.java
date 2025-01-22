@@ -2,6 +2,7 @@ package com.example.library.controller.reader;
 
 import com.example.library.controller.reader.advice.ReaderControllerExceptionHandler;
 import com.example.library.model.dto.ReaderDTO;
+import com.example.library.model.dto.ReaderDeptDTO;
 import com.example.library.model.entity.Reader;
 import com.example.library.service.reader.ReaderService;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +27,10 @@ public class ReaderController {
     @GetMapping("/most")
     public ResponseEntity<List<Reader>> getMostReadingReader(){
         return ResponseEntity.ok(readerService.getMostReadingReaders());
+    }
+
+    @GetMapping("/dept")
+    public ResponseEntity<List<ReaderDeptDTO>> getReadersDept(){
+        return ResponseEntity.ok(readerService.getReadersDept());
     }
 }
