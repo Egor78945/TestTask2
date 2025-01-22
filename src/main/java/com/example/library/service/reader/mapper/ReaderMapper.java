@@ -8,11 +8,11 @@ import java.util.Calendar;
 
 public class ReaderMapper {
     public static Reader mapTo(ReaderDTO readerDTO) {
-        return new Reader(readerDTO.phoneNumber(), readerDTO.name(), readerDTO.surname(), readerDTO.sex().toUpperCase(), new Date(mapBirthdayStringToDate(readerDTO.birthday())));
+        return new Reader(readerDTO.phoneNumber(), readerDTO.name(), readerDTO.surname(), readerDTO.sex().toUpperCase(), new Date(mapStringDateToMillis(readerDTO.birthday())));
     }
 
-    private static long mapBirthdayStringToDate(String birthday) {
-        String[] dmy = birthday.split("/");
+    public static long mapStringDateToMillis(String date) {
+        String[] dmy = date.split("/");
         Calendar calendar = Calendar.getInstance();
         calendar.set(Integer.parseInt(dmy[2]), Integer.parseInt(dmy[1]) - 1, Integer.parseInt(dmy[0]));
         return calendar.getTimeInMillis();
