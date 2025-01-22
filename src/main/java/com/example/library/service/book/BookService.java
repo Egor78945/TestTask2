@@ -28,7 +28,6 @@ public class BookService {
     }
 
     public void takeBook(String phoneNumber, Long bookId){
-        System.out.println(phoneNumber + " " + readerService.existsReaderByPhoneNumber(phoneNumber));
         if(readerService.existsReaderByPhoneNumber(phoneNumber)){
             if(bookIsFree(bookId)){
                 transactionService.saveTransaction(new Transaction(TransactionOperationType.TAKE.name(), new Timestamp(System.currentTimeMillis()), phoneNumber, bookId));
@@ -39,7 +38,22 @@ public class BookService {
         throw new RuntimeException("There in no reader with this phone number.");
     }
 
+    public void returnBook(String phoneNumber, Long bookId){
+        if(readerService.existsReaderByPhoneNumber(phoneNumber)){
+            if(bookIsBusyBy(phoneNumber, bookId)){
+                transactionService.saveTransaction(new Transaction(TransactionOperationType.RETURN.name(), new Timestamp(System.currentTimeMillis()), phoneNumber, bookId));
+                return;
+            }
+            throw new RuntimeException("You did not take the book.");
+        }
+        throw new RuntimeException("There in no reader with this phone number.");
+    }
+
     private boolean bookIsFree(Long bookId){
         return bookRepository.bookIsFreeById(bookId);
+    }
+
+    private boolean bookIsBusyBy(String phoneNumber, Long bookId){
+        return bookRepository.existsTransactionByPhoneNumberAndBookIdAndType(phoneNumber, bookId, TransactionOperationType.TAKE.name());
     }
 }

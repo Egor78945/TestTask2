@@ -26,4 +26,10 @@ public class BookController {
         bookService.takeBook(phoneNumber, id);
         return ResponseEntity.ok("The book is yours, dont forget to return it.");
     }
+
+    @PutMapping("/return")
+    public ResponseEntity<String> returnBook(@RequestParam("phoneNumber") String phoneNumber, @RequestParam("bookId") Long bookId){
+        bookService.returnBook(phoneNumber, bookId);
+        return ResponseEntity.ok("You returned the book.");
+    }
 }
