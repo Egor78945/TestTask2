@@ -21,7 +21,7 @@ databaseChangeLog:
                   value: 'Ivanov'
               - column:
                   name: sex
-                  value: 'male'
+                  value: 'MALE'
               - column:
                   name: birthday
                   value: '2000-05-15'
@@ -39,7 +39,7 @@ databaseChangeLog:
                   value: 'Kuznecov'
               - column:
                   name: sex
-                  value: 'male'
+                  value: 'MALE'
               - column:
                   name: birthday
                   value: '2004-01-01'
@@ -57,7 +57,7 @@ databaseChangeLog:
                   value: 'Vasilyeva'
               - column:
                   name: sex
-                  value: 'female'
+                  value: 'FEMALE'
               - column:
                   name: birthday
                   value: '2007-12-01'

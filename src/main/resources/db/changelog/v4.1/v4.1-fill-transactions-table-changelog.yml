@@ -15,13 +15,13 @@ databaseChangeLog:
                   value: 1
               - column:
                   name: type
-                  value: 'take'
+                  value: 'TAKE'
               - column:
                   name: operation_time
                   value: '2024-06-27 09:32:15'
               - column:
-                  name: reader_id
-                  value: 1
+                  name: reader_phone_number
+                  value: '+79873452345'
               - column:
                   name: book_id
                   value: 1
@@ -30,16 +30,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 1
+                  value: 2
               - column:
                   name: type
-                  value: 'return'
+                  value: 'RETURN'
               - column:
                   name: operation_time
                   value: '2024-07-17 14:05:45'
               - column:
-                  name: reader_id
-                  value: 1
+                  name: reader_phone_number
+                  value: '+79873452345'
               - column:
                   name: book_id
                   value: 1
@@ -48,16 +48,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 2
+                  value: 3
               - column:
                   name: type
-                  value: 'take'
+                  value: 'TAKE'
               - column:
                   name: operation_time
                   value: '2024-02-15 12:01:55'
               - column:
-                  name: reader_id
-                  value: 2
+                  name: reader_phone_number
+                  value: '+79035674321'
               - column:
                   name: book_id
                   value: 2
@@ -66,16 +66,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 2
+                  value: 4
               - column:
                   name: type
-                  value: 'return'
+                  value: 'RETURN'
               - column:
                   name: operation_time
                   value: '2024-02-27 09:45:17'
               - column:
-                  name: reader_id
-                  value: 2
+                  name: reader_phone_number
+                  value: '+79035674321'
               - column:
                   name: book_id
                   value: 2
@@ -84,16 +84,34 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 3
+                  value: 5
               - column:
                   name: type
-                  value: 'take'
+                  value: 'TAKE'
               - column:
                   name: operation_time
                   value: '2020-10-18 10:35:12'
               - column:
-                  name: reader_id
-                  value: 3
+                  name: reader_phone_number
+                  value: '+79452390567'
               - column:
                   name: book_id
                   value: 3
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  value: 6
+              - column:
+                  name: type
+                  value: 'TAKE'
+              - column:
+                  name: operation_time
+                  value: '2025-01-11 09:32:01'
+              - column:
+                  name: reader_phone_number
+                  value: '+79873452345'
+              - column:
+                  name: book_id
+                  value: 1

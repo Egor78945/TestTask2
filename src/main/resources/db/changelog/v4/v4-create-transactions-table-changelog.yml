@@ -30,13 +30,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: reader_id
-                  type: bigint
+                  name: reader_phone_number
+                  type: varchar(12)
                   constraints:
                     nullable: false
                     foreignKeyName: transactions_readers_fk
                     referencedTableName: readers
-                    referencedColumnNames: id
+                    referencedColumnNames: phone_number
               - column:
                   name: book_id
                   type: bigint
