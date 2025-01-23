@@ -23,3 +23,6 @@ databaseChangeLog:
   - include:
       relativeToChangelogFile: true
       file: ../v4.1/v4.1-accumulate-changelog.yml
+  - include:
+      relativeToChangelogFile: true
+      file: ../v5/v5-accumulate-changelog.yml

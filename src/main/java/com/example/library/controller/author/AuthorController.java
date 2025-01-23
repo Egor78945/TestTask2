@@ -3,6 +3,7 @@ package com.example.library.controller.author;
 import com.example.library.controller.author.advice.AuthorControllerExceptionHandler;
 import com.example.library.model.entity.Author;
 import com.example.library.service.author.AuthorService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class AuthorController {
     private final AuthorService authorService;
 
     @GetMapping("/popular")
+    @Operation(description = "Возвращает самых популярных авторов в определённом диапазоне времени.")
     public ResponseEntity<List<Author>> getMostPopularAuthorByDateDiapason(@RequestParam("from") String from, @RequestParam("to") String to) {
         List<Author> authors = authorService.getMostPopularAuthorByDateDiapason(from, to);
         return ResponseEntity.ok(authors);
